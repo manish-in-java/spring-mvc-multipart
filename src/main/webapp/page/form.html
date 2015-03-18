@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org/layout" th:inline="text"
+      layout:decorator="default">
+<head>
+  <title>Spring MVC :: Multipart Upload</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="hero-unit span9">
+    <h1>Multipart file upload with Spring MVC</h1>
+  </div>
+  <div class="panel panel-success">
+    <div class="panel-heading">Choose a file to upload</div>
+    <div class="panel-body">
+      <form enctype="multipart/form-data" method="POST">
+        <fieldset>
+          <div th:if="${file}" th:text="${file}"></div>
+          <div th:if="${error}" th:text="${error}"></div>
+          <div class="file">
+            <label>
+              <input name="file" type="file"/>
+            </label>
+          </div>
+          <button class="btn btn-success" type="submit">Upload</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
